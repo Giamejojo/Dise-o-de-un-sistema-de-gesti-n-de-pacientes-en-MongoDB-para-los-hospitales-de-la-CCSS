@@ -8,7 +8,10 @@
     "start": "node --env-file-if-exists=.env src/server.js",
     "dev": "nodemon src/server.js",
     "bd-crear": "node src/database/crearColecciones.js",
-    "bd-diccionario": "node src/database/diccionario.js"
+    "bd-diccionario": "node src/database/diccionario.js",
+    "bd-datos": "node --env-file-if-exists=.env src/database/datosEjemplo.js",
+    "bd-vistas": "node src/vistas/crearVistas.js",
+    "cursor-exportar": "node src/cursores/exportar.js"
   },
   "repository": {
     "type": "git",

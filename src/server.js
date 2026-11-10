@@ -2,6 +2,8 @@
 const mongoose = require("mongoose");
 const conectarDB = require("./config/db");
 const recursos = require("./routes/recursos");
+const vistas = require("./routes/vistas");
+const reportes = require("./routes/reportes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,6 +25,8 @@ app.use("/api/pacientes", recursos.pacientes);
 app.use("/api/medicamentos", recursos.medicamentos);
 app.use("/api/visitas", recursos.visitas);
 app.use("/api/prescripciones", recursos.prescripciones);
+app.use("/api/vistas", vistas);
+app.use("/api/reportes", reportes);
 
 conectarDB().then(() => {
   app.listen(PORT, () => {
