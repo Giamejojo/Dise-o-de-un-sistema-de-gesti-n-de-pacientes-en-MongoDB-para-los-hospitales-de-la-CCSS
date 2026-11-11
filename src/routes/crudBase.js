@@ -11,7 +11,7 @@ function manejarError(res, error) {
   if (error.code === 121) {
     return res.status(400).json({ mensaje: "El documento no cumple la validación de la colección" });
   }
-  console.error("Error:", error.message);
+  console.error("Error:", error);
   res.status(500).json({ mensaje: "Error interno del servidor" });
 }
 
@@ -97,4 +97,6 @@ function crearRouterCrud(Modelo, opciones) {
   return router;
 }
 
-module.exports = { crearRouterCrud };
+module.exports = { crearRouterCrud, manejarError };
+
+

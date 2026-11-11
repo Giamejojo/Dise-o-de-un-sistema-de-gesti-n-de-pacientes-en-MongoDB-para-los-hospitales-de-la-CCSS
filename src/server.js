@@ -4,6 +4,7 @@ const conectarDB = require("./config/db");
 const recursos = require("./routes/recursos");
 const vistas = require("./routes/vistas");
 const reportes = require("./routes/reportes");
+const procedimientos = require("./routes/procedimientos");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,7 @@ app.use("/api/visitas", recursos.visitas);
 app.use("/api/prescripciones", recursos.prescripciones);
 app.use("/api/vistas", vistas);
 app.use("/api/reportes", reportes);
+app.use("/api/procedimientos", procedimientos);
 
 conectarDB().then(() => {
   app.listen(PORT, () => {
